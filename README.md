@@ -1,7 +1,7 @@
 # Adversarial-Example-Attack-and-Defense
 This repository contains the implementation of the three non-target adversarial example attacks and one defense method as countermeasure to those attacks.
 
-## Attacks
+## Attack
 1. Fast Gradient Sign Method(FGSM) - [Goodfellow, I. J., Shlens, J., and Szegedy, C. Explaining and harnessing adversarial examples. arXiv preprint arXiv:1412.6572, 2014b.](https://arxiv.org/abs/1412.6572)
 ```python
 def fgsm_attack(input,epsilon,data_grad):
@@ -42,12 +42,13 @@ def mifgsm_attack(input,epsilon,data_grad):
 ## Defense 
 1. Defensive Distillation - [Papernot, N., McDaniel, P., Wu, X., Jha, S., and Swami, A. Distillation as a defense to adversarial perturbations against deep neural networks.
 arXiv preprint arXiv:1511.04508, 2016b.](https://arxiv.org/abs/1511.04508)
-
+```markdown
 According to the paper, defensive distillation can be done by following procedure:-
--Train a network F on the given training set (X,Y) by setting the temperature1 of the softmax to T.
--Compute the scores (after softmax) given by F(X) again and evaluate the scores at temperature T.
--Train another network F<sup>T</sup> using softmax at temperature T on the dataset with soft labels (X,F(X)). We refer the model F<sup>T</sup> as the distilled model.
--Use the distilled network F<sup>T</sup> with softmax at temperature 1, which is denoted as F<sup>1</sup> during prediction on test data X<sub>Test</sub>(or adversarial examples).
+- Train a network F on the given training set (X,Y) by setting the temperature1 of the softmax to T.
+- Compute the scores (after softmax) given by F(X) again and evaluate the scores at temperature T.
+- Train another network F<sup>T</sup> using softmax at temperature T on the dataset with soft labels (X,F(X)). We refer the model F<sup>T</sup> as the distilled model.
+- Use the distilled network F<sup>T</sup> with softmax at temperature 1, which is denoted as F<sup>1</sup> during prediction on test data X<sub>Test</sub>(or adversarial examples).
+```
  
     
 ## Results
