@@ -2,14 +2,14 @@
 This repository contains the implementation of the three non-target adversarial example attacks and one defense method as countermeasure to those attacks.
 
 ## Attacks
-1. Fast Gradient Sign Method(FGSM) - Goodfellow, I. J., Shlens, J., and Szegedy, C. Explaining and harnessing adversarial examples. arXiv preprint arXiv:1412.6572, 2014b.
+1. Fast Gradient Sign Method(FGSM) - [Goodfellow, I. J., Shlens, J., and Szegedy, C. Explaining and harnessing adversarial examples. arXiv preprint arXiv:1412.6572, 2014b.](https://arxiv.org/abs/1412.6572)
 ```python
 def fgsm_attack(input,epsilon,data_grad):
   pert_out = input + epsilon*data_grad.sign()
   pert_out = torch.clamp(pert_out, 0, 1)
   return pert_out
 ```
-2. Iterative Fast Gradient Sign Method(I-FGSM) - A. Kurakin, I. Goodfellow, and S. Bengio. Adversarial examples in the physical world. arXiv preprint arXiv:1607.02533, 2016.
+2. Iterative Fast Gradient Sign Method(I-FGSM) - [A. Kurakin, I. Goodfellow, and S. Bengio. Adversarial examples in the physical world. arXiv preprint arXiv:1607.02533, 2016.](https://arxiv.org/abs/1607.02533)
 ```python
 def ifgsm_attack(input,epsilon,data_grad):
   iter = 10
@@ -22,7 +22,7 @@ def ifgsm_attack(input,epsilon,data_grad):
       break
   return pert_out
 ```
-3. Momentum Iterative Fast Gradient Sign Method(MI-FGSM) - Y. Dong et al. Boosting Adversarial Attacks with Momentum. arXiv preprint arXiv:1710.06081, 2018.
+3. Momentum Iterative Fast Gradient Sign Method(MI-FGSM) - [Y. Dong et al. Boosting Adversarial Attacks with Momentum. arXiv preprint arXiv:1710.06081, 2018.](https://arxiv.org/abs/1710.06081)
 ```python
 def mifgsm_attack(input,epsilon,data_grad):
   iter=10
@@ -40,19 +40,18 @@ def mifgsm_attack(input,epsilon,data_grad):
 ```
 
 ## Defense 
-1. Defensive Distillation - Papernot, N., McDaniel, P., Wu, X., Jha, S., and Swami, A. Distillation as a defense to adversarial perturbations against deep neural networks.
-In 2016 IEEE Symposium on Security and Privacy (SP), pp. 582–597. IEEE, 2016b.
-```markdown
+1. Defensive Distillation - [Papernot, N., McDaniel, P., Wu, X., Jha, S., and Swami, A. Distillation as a defense to adversarial perturbations against deep neural networks.
+arXiv preprint arXiv:1511.04508, 2016b.](https://arxiv.org/abs/1511.04508)
+
 According to the paper, defensive distillation can be done by following procedure:-
     - Train a network F on the given training set (X,Y) by setting the temperature1 of the softmax to T.
     - Compute the scores (after softmax) given by F(X) again and evaluate the scores at temperature T.
-    - Train another network F^{T} using softmax at temperature T on the dataset with soft labels (X,F(X)). We refer the model F^{T} as the distilled model.
-    - Use the distilled network F^{T} with softmax at temperature 1, which is denoted as F^{1} during prediction on test data X_{test} (or adversarial examples).
-```
+    - Train another network F<sup>T</sup> using softmax at temperature T on the dataset with soft labels (X,F(X)). We refer the model F<sup>T</sup> as the distilled model.
+    - Use the distilled network F<sup>T</sup> with softmax at temperature 1, which is denoted as F<sup>1</sup> during prediction on test data X<sub>Test</sub>(or adversarial examples).
  
     
 ## Results
-Applied the attack methods and defense uaing MNIST dataset on the model based on https://github.com/pytorch/examples/blob/master/mnist/
+Applied the attack methods and defense uaing MNIST dataset on the model based on [pytorch example model for mnist](https://github.com/pytorch/examples/blob/master/mnist).
 
 
 ###
