@@ -55,23 +55,23 @@ According to the paper, defensive distillation can be done by following procedur
 Applied the attack methods and defense uaing MNIST dataset on the model based on [pytorch example model for mnist](https://github.com/pytorch/examples/blob/master/mnist).
 
 #### Test Accuracy during attacks
-##### FGSM
->![](/images/fgsm-attack.png)
-##### I-FGSM
->![](/images/ifgsm-attack.png)
-##### MI-FGSM
->![](/images/mifgsm-attack.png)
+1) FGSM
+![](/images/fgsm-attack.png)
+2) I-FGSM
+![](/images/ifgsm-attack.png)
+3) MI-FGSM
+![](/images/mifgsm-attack.png)
 #### Test Accuracy during attack using defensive distillation 
-##### FGSM
->![](/images/defense-fgsm.png)
-##### I-FGSM
->![](/images/defense-ifgsm.png)
-##### MI-FGSM
->![](/images/defense-mifgsm.png)
+1) FGSM
+![](/images/defense-fgsm.png)
+2) I-FGSM
+![](/images/defense-ifgsm.png)
+3) MI-FGSM
+![](/images/defense-mifgsm.png)
 #### Sample Advesarial Examples
-##### FGSM
->![](/images/fgsm-adv.png)
-##### I-FGSM
->![](/images/ifgsm-adv.png)
-##### MI-FGSM
->![](/images/mifgsm-adv.png)
+1) FGSM
+![](/images/fgsm-adv.png)
+2) I-FGSM
+![](/images/ifgsm-adv.png)
+3) MI-FGSM
+![](/images/mifgsm-adv.png)
