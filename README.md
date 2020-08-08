@@ -3,14 +3,14 @@ This repository contains the implementation of the three non-target adversarial 
 
 ## Attacks
 1. Fast Gradient Sign Method(FGSM) - Goodfellow, I. J., Shlens, J., and Szegedy, C. Explaining and harnessing adversarial examples. arXiv preprint arXiv:1412.6572, 2014b.
-```
+```python
 def fgsm_attack(input,epsilon,data_grad):
   pert_out = input + epsilon*data_grad.sign()
   pert_out = torch.clamp(pert_out, 0, 1)
   return pert_out
 ```
 2. Iterative Fast Gradient Sign Method(I-FGSM) - A. Kurakin, I. Goodfellow, and S. Bengio. Adversarial examples in the physical world. arXiv preprint arXiv:1607.02533, 2016.
-```
+```python
 def ifgsm_attack(input,epsilon,data_grad):
   iter = 10
   alpha = epsilon/iter
@@ -23,7 +23,7 @@ def ifgsm_attack(input,epsilon,data_grad):
   return pert_out
 ```
 3. Momentum Iterative Fast Gradient Sign Method(MI-FGSM) - Y. Dong et al. Boosting Adversarial Attacks with Momentum. arXiv preprint arXiv:1710.06081, 2018.
-```
+```python
 def mifgsm_attack(input,epsilon,data_grad):
   iter=10
   decay_factor=1.0
@@ -51,7 +51,7 @@ According to the paper, defensive distillation can be done by following procedur
  
     
 ## Results
-Applied the discussed attack methods and defense using MNIST dataset using LeNet-5 architecture inspired model (different from actual hyperparameter settings) for MNIST.
+Applied the attack methods and defense uaing MNIST dataset on the model based on https://github.com/pytorch/examples/blob/master/mnist/
 
 
 ###
