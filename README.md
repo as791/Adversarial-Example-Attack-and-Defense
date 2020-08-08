@@ -55,23 +55,23 @@ According to the paper, defensive distillation can be done by following procedur
 Applied the attack methods and defense uaing MNIST dataset on the model based on [pytorch example model for mnist](https://github.com/pytorch/examples/blob/master/mnist).
 
 #### Test Accuracy during attacks
-1) FGSM
+##### FGSM 
 ![](/images/fgsm-attack.png)
-2) I-FGSM
+##### I-FGSM 
 ![](/images/ifgsm-attack.png)
-3) MI-FGSM
+##### MI-FGSM 
 ![](/images/mifgsm-attack.png)
 #### Test Accuracy during attack using defensive distillation 
-1) FGSM
+##### FGSM 
 ![](/images/defense-fgsm.png)
-2) I-FGSM
+##### I-FGSM 
 ![](/images/defense-ifgsm.png)
-3) MI-FGSM
+##### MI-FGSM 
 ![](/images/defense-mifgsm.png)
 #### Sample Advesarial Examples
-1) FGSM
+##### FGSM 
 ![](/images/fgsm-adv.png)
-2) I-FGSM
+##### I-FGSM 
 ![](/images/ifgsm-adv.png)
-3) MI-FGSM
+##### MI-FGSM 
 ![](/images/mifgsm-adv.png)
