@@ -57,13 +57,10 @@ Applied the attack methods and defense uaing MNIST dataset on the model based on
 #### Test Accuracy during attacks
 ##### FGSM
 ![](/images/fgsm-attack.png)
-[Sample of Adversarial Examples](/images/fgsm-adv.png)
 ##### I-FGSM
 ![](/images/ifgsm-attack.png)
-[Sample of Adversarial Examples](/images/ifgsm-adv.png)
 ##### MI-FGSM
 ![](/images/mifgsm-attack.png)
-[Sample of Adversarial Examples](/images/mifgsm-adv.png)
 #### Test Accuracy during attack using defensive distillation 
 ##### FGSM
 ![](/images/defense-fgsm.png)
@@ -71,4 +68,10 @@ Applied the attack methods and defense uaing MNIST dataset on the model based on
 ![](/images/defense-ifgsm.png)
 ##### MI-FGSM
 ![](/images/defense-mifgsm.png)
-
+#### Sample Advesarial Examples
+##### FGSM
+![](/images/fgsm-adv.png)
+##### I-FGSM
+![](/images/ifgsm-adv.png)
+##### MI-FGSM
+![](/images/mifgsm-adv.png)
