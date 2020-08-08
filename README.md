@@ -1,5 +1,5 @@
 # Adversarial-Example-Attack-and-Defense
-This repository contains the implementation of the three non-target adversarial example attacks and one defense method as countermeasure to those attacks.
+This repository contains the implementation of the three non-target white box adversarial example attacks and one defense method as countermeasure to those attacks.
 
 ## Attack
 1. Fast Gradient Sign Method(FGSM) - [Goodfellow, I. J., Shlens, J., and Szegedy, C. Explaining and harnessing adversarial examples. arXiv preprint arXiv:1412.6572, 2014b.](https://arxiv.org/abs/1412.6572)
