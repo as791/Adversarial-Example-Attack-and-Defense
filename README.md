@@ -42,13 +42,13 @@ def mifgsm_attack(input,epsilon,data_grad):
 ## Defense 
 1. Defensive Distillation - [Papernot, N., McDaniel, P., Wu, X., Jha, S., and Swami, A. Distillation as a defense to adversarial perturbations against deep neural networks.
 arXiv preprint arXiv:1511.04508, 2016b.](https://arxiv.org/abs/1511.04508)
-```markdown
-According to the paper, defensive distillation can be done by following procedure:-
-- Train a network F on the given training set (X,Y) by setting the temperature1 of the softmax to T.
-- Compute the scores (after softmax) given by F(X) again and evaluate the scores at temperature T.
-- Train another network F<sup>T</sup> using softmax at temperature T on the dataset with soft labels (X,F(X)). We refer the model F<sup>T</sup> as the distilled model.
-- Use the distilled network F<sup>T</sup> with softmax at temperature 1, which is denoted as F<sup>1</sup> during prediction on test data X<sub>Test</sub>(or adversarial examples).
-```
+
+According to the paper, defensive distillation can be done by following procedure:
+1) Train a network F on the given training set (X,Y) by setting the temperature of the softmax to T.
+2) Compute the scores (after softmax) given by F(X) again and evaluate the scores at temperature T.
+3) Train another network F'<sub>T</sub> using softmax at temperature T on the dataset with soft labels (X,F(X)). We refer the model F<sub>T</sub> as the distilled model.
+4) Use the distilled network F'<sub>T</sub> with softmax at temperature 1, which is denoted as F'<sub>1</sub> during prediction on test data X<sub>test</sub>(or adversarial examples).
+
  
     
 ## Results
