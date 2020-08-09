@@ -49,29 +49,27 @@ According to the paper, defensive distillation can be done by following procedur
 3) Train another network F'<sub>T</sub> using softmax at temperature T on the dataset with soft labels (X,F(X)). We refer the model F<sub>T</sub> as the distilled model.
 4) Use the distilled network F'<sub>T</sub> with softmax at temperature 1, which is denoted as F'<sub>1</sub> during prediction on test data X<sub>test</sub>(or adversarial examples).
 
- 
-    
 ## Results
 Applied the attack methods and defense uaing MNIST dataset on the model based on [pytorch example model for mnist](https://github.com/pytorch/examples/blob/master/mnist).
 
 #### Test Accuracy during attacks
 ##### FGSM 
-![](/images/fgsm-attack.png)
+<img align="right" src="/images/fgsm-attack.png"> 
 ##### I-FGSM 
-![](/images/ifgsm-attack.png)
+<img align="right" src="/images/ifgsm-attack.png">
 ##### MI-FGSM 
-![](/images/mifgsm-attack.png)
+<img align="right" src="/images/mifgsm-attack.png">
 #### Test Accuracy during attack using defensive distillation 
 ##### FGSM 
-![](/images/defense-fgsm.png)
+<img align="right" src="/images/defense-fgsm.png">
 ##### I-FGSM 
-![](/images/defense-ifgsm.png)
+<img align="right" src="/images/defense-ifgsm.png">
 ##### MI-FGSM 
-![](/images/defense-mifgsm.png)
+<img align="right" src="/images/defense-mifgsm.png">
 #### Sample Advesarial Examples
 ##### FGSM 
-![](/images/fgsm-adv.png)
+<img align="centre" src="/images/fgsm-adv.png">
 ##### I-FGSM 
-![](/images/ifgsm-adv.png)
+<img align="centre" src="/images/ifgsm-adv.png">
 ##### MI-FGSM 
-![](/images/mifgsm-adv.png)
+<img align="centre" src="/images/mifgsm-adv.png">
