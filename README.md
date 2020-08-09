@@ -50,26 +50,34 @@ According to the paper, defensive distillation can be done by following procedur
 4) Use the distilled network F'<sub>T</sub> with softmax at temperature 1, which is denoted as F'<sub>1</sub> during prediction on test data X<sub>test</sub>(or adversarial examples).
 
 ## Results
-Applied the attack methods and defense uaing MNIST dataset on the model based on [pytorch example model for mnist](https://github.com/pytorch/examples/blob/master/mnist).
+- Applied the attack methods and defense using MNIST dataset on the model based on [pytorch example model for mnist](https://github.com/pytorch/examples/blob/master/mnist).
+- Here, the attacks are white box as all the knowledge of network hyperparameter setting with the network's achitecture.
+- Results tell that FGSM attack reduces the test accuracy from 97.08% to 24.84% with epsilon from 0 to 0.3, whereas I-FGSM with number of iteration as 10 reduces 
+test accuracy from 96.92% to 30.54% similar with MI-FGSM with decay factor of 1.0 and iterations of 10, reduction in test accuracy from 97.05% to 30.10% i.e. we can 
+say that our attacks to the proposed network was successful and it reduced ~70% of test accuracy in all the three cases for max epsilon of 0.3.
+- During the defensive distillation used same network as Net F and for Net F' reduced number of filters to half in each layer to reduce the number of parameters. Temperature of 100 was taken in our case. Results tell that FGSM attack reduces test accuracy from 90.33% to 88.01% with same epsilon range, I-FGSM with iteration of 10 reduced test accuracy 
+from 90.80% to 88.16% similar with MI-FGSM with same decay factor of 1.0 and iterations of 10, reduction in test accuracy from 90.26% to 87.97% i.e. we can say that defensive
+distillation for the proposed network with temp of 100 was successful and it only reduced ~2% of test accuracy in all the three cases for max epsilon of 0.3.
 
 #### Test Accuracy during attacks
 ##### FGSM 
-<img align="right" src="/images/fgsm-attack.png"> 
+![](/images/fgsm-attack.png)
 ##### I-FGSM 
-<img align="right" src="/images/ifgsm-attack.png">
+![](/images/ifgsm-attack.png) 
 ##### MI-FGSM 
-<img align="right" src="/images/mifgsm-attack.png">
+![](/images/mifgsm-attack.png) 
 #### Test Accuracy during attack using defensive distillation 
 ##### FGSM 
-<img align="right" src="/images/defense-fgsm.png">
+![](/images/defense-fgsm.png) 
 ##### I-FGSM 
-<img align="right" src="/images/defense-ifgsm.png">
+![](/images/defense-ifgsm.png) 
 ##### MI-FGSM 
-<img align="right" src="/images/defense-mifgsm.png">
+![](/images/defense-mifgsm.png) 
 #### Sample Advesarial Examples
 ##### FGSM 
-<img align="centre" src="/images/fgsm-adv.png">
+![](/images/fgsm-adv.png) 
 ##### I-FGSM 
-<img align="centre" src="/images/ifgsm-adv.png">
+![](/images/ifgsm-adv.png) 
 ##### MI-FGSM 
-<img align="centre" src="/images/mifgsm-adv.png">
+![](/images/mifgsm-adv.png) 
+
