@@ -49,6 +49,8 @@ According to the paper, defensive distillation can be done by following procedur
 3) Train another network F'<sub>T</sub> using softmax at temperature T on the dataset with soft labels (X,F(X)). We refer the model F<sub>T</sub> as the distilled model.
 4) Use the distilled network F'<sub>T</sub> with softmax at temperature 1, which is denoted as F'<sub>1</sub> during prediction on test data X<sub>test</sub>(or adversarial examples).
 
+Taken Temperature as 100 for training the NetF and NetF'. 
+
 ## Results
 - Applied the attack methods and defense using MNIST dataset on the model based on [pytorch example model for mnist](https://github.com/pytorch/examples/blob/master/mnist).
 - Here, the attacks are white box as all the knowledge of network hyperparameter setting with the network's achitecture.
